@@ -10,6 +10,7 @@
 
 <body>
     <p id="local">Loading...<i class="far fa-clock"></i></p>
+    <p>Click Pinpoints to View The City Location</p>
     <div id="output">
 
     </div>
@@ -19,44 +20,54 @@
         var cities = [{
             name: "Dallas",
             utcOffset: -5,
-            flag: "United-States-of-America.png"
+            flag: "United-States-of-America.png",
+            link: "https://www.google.com/maps/place/Dallas,+TX,+USA/@32.8209296,-97.0117533,10z/data=!3m1!4b1!4m5!3m4!1s0x864c19f77b45974b:0xb9ec9ba4f647678f!8m2!3d32.7766642!4d-96.7969879"
         }, {
             name: "Buenos Aires",
             utcOffset: -3,
-            flag: "Argentina.png"
+            flag: "Argentina.png",
+            link: "https://www.google.com/maps/place/Buenos+Aires,+Argentina/@-34.6154611,-58.5733853,11z/data=!3m1!4b1!4m5!3m4!1s0x95bcca3b4ef90cbd:0xa0b3812e88e88e87!8m2!3d-34.6036844!4d-58.3815591"
         }, {
             name: "Volograd",
             utcOffset: 4,
-            flag: "Russia.png"
+            flag: "Russia.png",
+            link: "https://www.google.com/maps/place/Volgograd,+Volgograd+Oblast,+Russia/@48.6705332,44.2265171,10z/data=!3m1!4b1!4m5!3m4!1s0x41053375b85b7667:0x880d179cce57da41!8m2!3d48.708048!4d44.5133035"
         }, {
             name: "Perth",
             utcOffset: 8,
-            flag: "Australia.png"
+            flag: "Australia.png",
+            link: "https://www.google.com/maps/place/Perth+WA,+Australia/@-32.0376666,115.4010473,9z/data=!3m1!4b1!4m5!3m4!1s0x2a32966cdb47733d:0x304f0b535df55d0!8m2!3d-31.9523123!4d115.861309"
         }, {
             name: "Tokyo",
             utcOffset: 9,
-            flag: "Japan.png"
+            flag: "Japan.png",
+            link: "https://www.google.com/maps/place/Tokyo,+Japan/@35.5062893,138.6484408,8z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6761919!4d139.6503106"
 
         }, {
             name: "Manchester",
             utcOffset: 1,
-            flag: "United-Kingdom.png"
+            flag: "United-Kingdom.png",
+            link: "https://www.google.com/maps/place/Manchester,+UK/@53.1147634,-2.7198959,8.31z/data=!4m5!3m4!1s0x487a4d4c5226f5db:0xd9be143804fe6baa!8m2!3d53.4807593!4d-2.2426305"
         }, {
             name: "Bridgetown",
             utcOffset: -4,
-            flag: "Barbados.png"
+            flag: "Barbados.png",
+            link: "https://www.google.com/maps/place/Bridgetown,+Barbados/@13.1013903,-59.6316131,13z/data=!3m1!4b1!4m5!3m4!1s0x8c43f6c2fa4cf93d:0x7dc1e66a95867069!8m2!3d13.1059816!4d-59.6131741"
         }, {
             name: "Apia",
             utcOffset: 13,
-            flag: "Samoa.png"
+            flag: "Samoa.png",
+            link: "https://www.google.com/maps/place/Apia,+Samoa/@-13.8598265,-171.8031747,13z/data=!3m1!4b1!4m5!3m4!1s0x71a513a364ec1003:0x893cc8c8c70af762!8m2!3d-13.8506958!4d-171.7513551"
         }, {
             name: "Antananarivo",
             utcOffset: 3,
-            flag: "Madagascar.png"
+            flag: "Madagascar.png",
+            link: "https://www.google.com/maps/place/Antananarivo,+Madagascar/@-18.8873012,47.3724251,11z/data=!3m1!4b1!4m5!3m4!1s0x21f07de34f1f4eb3:0xdf110608bcc082f9!8m2!3d-18.8791902!4d47.5079055"
         }, {
             name: "Guatemala City",
             utcOffset: -6,
-            flag: "Guatemala.png"
+            flag: "Guatemala.png",
+            link: "https://www.google.com/maps/place/Guatemala+City,+Guatemala/@14.6263757,-90.5626018,12z/data=!3m1!4b1!4m5!3m4!1s0x8589a180655c3345:0x4a72c7815b867b25!8m2!3d14.6349149!4d-90.5068824"
         }];
         cities.sort(compare);
 
@@ -106,7 +117,7 @@
             for (a = 0; a < cities.length; a++) {
                 output += `
                 <tr><td><img src="images/${cities[a].flag}"/></td>
-                    <td><i class="fas fa-map-marker-alt"></i>${cities[a].name}</td>
+                    <td><a href="${cities[a].link}"><i class="fas fa-map-marker-alt"></a></i> ${cities[a].name}</td>
                     <td>${getCurrentTime(cities[a].utcOffset)} <i class="fas fa-clock"></i></td>
                 </tr>
                 
